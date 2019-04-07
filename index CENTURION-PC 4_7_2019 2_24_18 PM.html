@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web|Glegoo" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+</head>
+<style>
+.gradient{width: 100%;height: 100vh;text-align: center;
+background-image: radial-gradient(farthest-side at 70% 35%, #FDE570, #FAE25F, #FACF1A,#F0BC18)}
+.animatedGd {width: 100%;height: 85vh;
+background-image: radial-gradient(farthest-side at 70% 35%, #FDE570, #FAE25F, #FACF1A,#F0BC18)}
+@media only screen and (max-width: 600px){
+    .animatedGd {height: fit-content}
+}
+
+.san {font-family: 'Titillium Web', sans-serif;}
+.serif {font-family: 'Glegoo', serif;}
+
+.dark {background-color: #103748}
+.green {color: #B0C900}
+.red {background-color: #DE394B}
+.blue {color: #8EC8F1}
+.grey {background-color: #7E8081}
+
+.pointer {
+    cursor: pointer;
+    height: 0.5em;
+    width: 0.5em;
+    background-color: #fc553d;
+    border-radius: 50%;
+    position: fixed;  
+    z-index: 1;
+    animation: blink 1.5s linear infinite;
+    }
+    @keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: 0.7}
+    100%{opacity: 1;}
+    }
+
+.next {
+    position: absolute; display: inline;
+    left: 98vw; 
+    background-color: transparent;
+    color: transparent;
+}
+.mobileOnly {display: none}
+
+
+@media only screen and (max-width: 600px){
+    .noMobile {display: none}
+    .mobileOnly {display: block}
+}
+
+
+</style>
+
+
+<!--start pointer-->
+<div onclick="pointer()"><span class="pointer" style="display: none"></span> 
+
+<!--home-->
+<div id="Top" class="block dark" style="padding:0;margin:0;height:100vh">
+    <div class="w3-row w3-center san" style="padding-top:30vh;font-size:4vmax;font-weight: 600">
+        <span style="color:white;border:white 0.1vmax solid">&nbsp;RISK </span>
+        <span style="background-color:white;color:#103748;border:white 0.1vmax solid">
+            FACTORS</span>
+    </div>
+    <div class="w3-row w3-center serif green" style="font-size:8vmax;">
+    Atrial Fibrillation
+    </div>
+</div>
+
+
+
+<!--block 0-->
+<div class="block">
+    
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+
+<!--end pointer-->
+</div>
+
+
+<!--bottom bar-->
+<div class="w3-row w3-center san" style="font-size: 1.1vmax;color:#868686">
+    <a href="https://heartrhythmbox.github.io/main/" target="_blank" style="text-decoration:none">
+        <img src="box transparent.png" style="width:1.3vmax">
+        HeartRhythmBox: Main Page
+    </a> <span style="color:black"> &#9679; </span>
+    <a href="#top" style="text-decoration:none;color:black">&uArr; to top</a>
+    <span style="color:black"> &#9679; </span>
+    <a href="https://www.facebook.com/HeartRhythmBox" style="text-decoration:none" target="_blank">
+        <i class="fab fa-facebook-square" style="color:#2E80EC;font-size: 1.2vmax"></i>
+        FB: @HeartRhythmBox
+    </a>
+
+</div-->
+
+
+
+<script src="block navigation.js" ></script>
+<script>
+
+//up arrow
+window.addEventListener("keydown", function(event) {
+    event.preventDefault();
+    if (event.keyCode===38) {
+    blockNav(-1)}
+})
+//down arrow
+window.addEventListener("keydown", function(event) {
+    event.preventDefault();
+    if (event.keyCode===40) {
+    blockNav(1)}
+})
+
+window.addEventListener("keydown", function(event) {
+        event.preventDefault();
+        if (event.keyCode===27) {
+        window.unblur()}
+    })
+
+window.addEventListener("keydown", function(event) {
+        event.preventDefault();
+        if (event.keyCode===80) {
+        pointerSwitch()}
+    })
+
+window.onload = function () {unblur()};
+window.ontouchmove = function () {unblur()};
+
+//pointer
+var pSwitch = 0;
+function pointerSwitch(n){
+    var p = document.getElementsByClassName('pointerSwitch')
+    if(pSwitch ==0) {
+        pSwitch =1;
+        var i;
+        for (i=0;i<p.length;i++){
+            p[i].innerHTML = "turn off pointer"
+        }
+        showMenu(n)
+    }
+    else {
+        pSwitch=0;
+        var i;
+        for (i=0;i<p.length;i++){
+            p[i].innerHTML = "turn on pointer"
+            var pointer = document.getElementsByClassName("pointer");
+            pointer[0].style.display = "none";
+            }
+        showMenu(n)
+    }
+}
+
+
+function pointer() {
+    if (pSwitch!=0){
+    var x = event.clientX;
+    var y = event.clientY;
+    var p = document.getElementsByClassName("pointer");
+    p[0].style.display = "inline";
+    p[0].style.left = x+"px"; 
+    p[0].style.top = y+"px";}
+}
+
+//auto height
+function autoHeight(cName){
+    var c1 = document.getElementsByClassName(cName);
+    setHeight (c1)
+    
+
+    function setHeight(c){
+    //find content height
+    var h = [];var i;
+    for (i=0;i<c.length;i++){
+        var height = c[i].offsetHeight;
+        h.push(height)
+    }
+    h.sort(function(a,b){return b-a})
+    var maxH = h[0]
+   
+    //set height
+    var j;
+    for (j=0;j<c.length;j++){
+        c[j].style.height = maxH+"px"
+    }
+    }
+}
+
+//show debate title
+function showDebateT(x) {
+    var t = document.getElementsByClassName("title")
+    var d = document.getElementsByClassName("debateT")
+    if (screen.width>1024){
+        if (x == 1){
+        t[0].style.padding = "30% 0 0 0"
+        d[0].style.display = "block"
+        } else {
+        t[0].style.padding = "40% 0 0 0"
+        d[0].style.display = "none"
+        }
+    }
+}
+
+//menu
+var menuStatus = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+function showMenu(n){
+    var m = document.getElementsByClassName('mItem');
+    if (menuStatus[n]==0){
+    m[n].style.display = "inline"
+    menuStatus[n]=1
+    } else if (menuStatus[n]==1){
+    m[n].style.display = "none"
+    menuStatus[n]=0
+    }
+}
+
+//onclick
+window.onload = function(){
+    clickIcon('icon')
+    aGd('animatedGd')
+    hCenter('lastBlk',0)
+    if (screen.width>600){
+    clickable('curtain0')
+    clickableH('curtain0H','hidden')
+    clickable('curtain1')
+    clickableH('curtain1H','hidden1')
+    clickableTab('tab')
+    }
+} 
+
+function clickable(v){
+    var c = document.getElementsByClassName(v);
+    c[0].onclick = function(){curtainM(v,0)}
+    c[1].onclick = function(){curtainM(v,1)}      
+    c[2].onclick = function(){curtainM(v,2)}
+}
+function clickableH(v, h){
+    var c = document.getElementsByClassName(h);
+    c[0].onclick = function(){curtainMH(v,0,0)}
+    c[1].onclick = function(){curtainMH(v,0,1)}      
+    c[2].onclick = function(){curtainMH(v,0,2)}
+    c[3].onclick = function(){curtainMH(v,1,0)}
+    c[4].onclick = function(){curtainMH(v,1,1)}      
+    c[5].onclick = function(){curtainMH(v,1,2)}
+    c[6].onclick = function(){curtainMH(v,2,0)}
+    c[7].onclick = function(){curtainMH(v,2,1)}      
+    c[8].onclick = function(){curtainMH(v,2,2)}
+}
+
+function curtainM(cName,n){
+    var c = document.getElementsByClassName(cName);
+    var hidden = cName+'H';
+    var h = document.getElementsByClassName(hidden)
+      
+    //open
+    var i;
+    for (i=0;i<c.length;i++){
+        c[i].style.display = "none"
+    }
+    h[n].style.display = "block"
+    
+}
+
+function curtainMH(cName,n,s){
+    var cH = document.getElementsByClassName(cName)
+    var h = document.getElementsByClassName('hidden');
+    var base = cName.substr (0,8);
+    var c = document.getElementsByClassName(base);
+        
+    //reset
+    if (s!=n) {
+        
+        var i;
+        for (i=0;i<c.length;i++){
+            c[i].style.display = "block"
+            cH[i].style.display = "none"
+        }
+        
+    } 
+}
+
+
+//tab
+function clickableTab(name){
+    var tab = document.getElementsByClassName(name)
+    var content = document.getElementsByClassName('tabContent')
+    showTab(0)
+    tab[0].onclick = function() {showTab(0)}
+    tab[1].onclick = function() {showTab(1)}
+    
+
+    function showTab(n){
+        var i;
+        for (i=0;i<tab.length;i++){
+        tab[i].style.backgroundColor ="#ddd"
+        content[i].style.display = "none"
+        tab[i].style.borderBottom = "none"
+        }
+        tab[n].style.backgroundColor = "#fde570"
+        tab[n].style.borderBottom = "solid #555 0.5vmax"
+        content[n].style.display = "block"
+        
+    } 
+}
+
+//icon
+function clickIcon(name){
+    var icn = document.getElementsByClassName(name)
+    icn[0].onclick = function() {showArg(0)}
+    icn[1].onclick = function() {showArg(1)}
+    icn[2].onclick = function() {showArg(2)}
+    
+    var title = document.getElementsByClassName('argT')
+    title[0].style.cursor = "pointer"
+    title[0].onclick = function() {reset()}
+    var h = document.getElementsByClassName('hBlock')
+    var c = document.getElementsByClassName('argC')
+
+    function showArg(n){
+        h[0].style.display = "none";
+        var i;
+        for (i=0;i<icn.length;i++){
+            icn[i].style.color = "#bbb"
+            c[i].style.display = "none"
+        }    
+        icn[n].style.color = "#555"
+        c[n].style.display = "block"
+        hCenter('hCenter',n)
+    }
+
+    function reset(){
+        h[0].style.display = "block"
+        var i;
+        for (i=0;i<icn.length;i++){
+            icn[i].style.color = "#555"
+            c[i].style.display = "none"
+        }    
+    }
+}
+
+//autoCenter
+function hCenter(name,n){
+    if (screen.width>600){
+    var h = document.getElementsByClassName(name)
+    var nameL = name +'L'; var nameR = name+'R'
+    var L = document.getElementsByClassName(nameL)
+    var R = document.getElementsByClassName(nameR)
+    var scn = screen.width;
+    var width = L[n].clientWidth+R[n].clientWidth;
+    var margin = (scn-width)/2
+    h[n].style.marginLeft = margin + "px"}
+}
+
+
+function aGd(name){
+    var g = document.getElementsByClassName(name);
+    //background-image: radial-gradient(farthest-side at 70% 35%, #FDE570, #FAE25F, #FACF1A,#F0BC18)
+    var x =0; var y = Math.floor((Math.random() * 100) + 1);
+    var inc = true;
+    var id = setInterval(color, 35);
+    
+    function color(){
+        if (inc){
+            if (x==100){
+                inc = false;
+                yDelta= Math.floor((Math.random() * 20) + 1);y = y-yDelta;
+                x--;
+            } else {x++;}
+        } else {
+            if (x==0){
+                inc = true;
+                yDelta= Math.floor((Math.random() * 20) + 1);y= y+yDelta;
+                x++;
+            } else {x--;}
+        }
+    if (y<0){y=50};if (y>100){y=50}
+    g[0].style.backgroundImage = "radial-gradient(farthest-side at " + x +"%" + y + "%,#FDE570, #FAE25F, #FACF1A,#F0BC18)"
+    }
+}
+
+
+
+/**typewriter**/
+var txtArray = ['BECAUSE', 'IT\'S', 'PHYSIOLOGIC.'];
+
+var iNo =0;var aNo =0;
+
+function showArray() {
+    if (aNo ==0 && iNo==0){
+    document.getElementById('final').innerHTML = ""
+    }
+    if (aNo < txtArray.length) {
+        setTimeout(typeWriter, 800); }
+}
+function typeWriter() {
+    if (iNo < txtArray[aNo].length) {
+            document.getElementById("final").style.color = "white"
+            document.getElementById("final").innerHTML += txtArray[aNo].charAt(iNo);
+            setTimeout(typeWriter, 100);iNo++;
+    }
+    else {aNo++;iNo=0;
+    document.getElementById("final").innerHTML += '<br>'
+    showArray()}
+}
+
+function finalColor(){
+    document.getElementById('final').style.color =  "white";
+}
+
+
+</script>	
+
+</body>
+</html>

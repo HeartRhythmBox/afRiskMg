@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web|Glegoo" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+</head>
+<style>
+
+.san {font-family: 'Titillium Web', sans-serif;}
+.serif {font-family: 'Glegoo', serif;}
+
+.dark {background-color: #103748}
+.green {color: #B0C900}
+.red {background-color: #DE394B}
+.blue {color: #8EC8F1}
+.grey {background-color: #7E8081}
+
+.pointer {
+    cursor: pointer;
+    height: 0.5em;
+    width: 0.5em;
+    background-color: #fc553d;
+    border-radius: 50%;
+    position: fixed;  
+    z-index: 1;
+    animation: blink 1.5s linear infinite;
+    }
+    @keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: 0.7}
+    100%{opacity: 1;}
+    }
+
+.ref {font-size:2vh;color:#969696;font-family: 'Titillium Web', sans-serif;padding: 1vmax}
+
+.mobileOnly {display: none}
+@media only screen and (max-width: 600px){
+    .noMobile {display: none}
+    .mobileOnly {display: block}
+}
+
+
+</style>
+
+
+<!--start pointer-->
+<div onclick="pointer()"><span class="pointer" style="display: none"></span> 
+
+<!--home--block 0-->
+<div id="Top" class="block dark" style="padding:0;margin:0;height:100vh;width: 100%">
+    <div class="w3-row w3-center san" style="padding-top:30vh;font-size:4vmax;font-weight: 900;font-stretch:semi-expanded">
+        <span style="color:#DE394B;border:#DE394B 0.1vmax solid">&nbsp;RISK </span>
+        <span style="background-color:#DE394B;color:#103748;border:#DE394B 0.1vmax solid">
+        &nbsp;FACTORS&nbsp;</span>
+    </div>
+    <div class="w3-center" style="margin-top: 1vmax">
+        <i class="fas fa-retweet fa-4x" style="color:#ddd"></i>
+    </div>
+    <div class="w3-row w3-padding w3-center serif" style="font-size:7vmax;line-height: 100%;color:white">
+    Atrial Fibrillation</div>
+    <div class="w3-row w3-center san" style="color:#b2b2b2;font-size: 1.8vmax;padding-top: 2vmax">
+        <a href="https://www.facebook.com/HeartRhythmBox" style="text-decoration:none" target="_blank">
+        <i class="fab fa-facebook-square" style="color:#b2b2b2;"></i>
+            &nbsp;HeartRhythmBox
+        </a>
+    </div>
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+
+
+<!--block 1 sheeps-->
+<div class="block" style="background-color:#b0c900;padding-top:4vmax">
+    <div class="w3-row serif w3-center" style="font-size: 4vmax;padding: 2vmax;color:white;font-weight: 700;
+    line-height: 120%">
+        Atria Remodelling as Consequences of Sustained Obesity (I/II)
+    </div>
+    <div class="w3-row w3-center" style="padding: 2vmax;">
+        <div class="w3-col s4 w3-padding">
+            <img src="media/twinSheeps.png" style="width:100%;padding-top:10vh"></div>
+        <div class="w3-col s2">&nbsp;</div>
+        <div class="w3-col s4 w3-padding">
+            <img src="media/fatSheep.png" style="width: 100%">
+            <img src="media/sheep.png" style="width:100%">
+        </div>
+    </div>
+
+    <div class="ref w3-center">
+        <a href="https://www.sciencedirect.com/science/article/pii/S0735109715021944?via%3Dihub" target="_blank">
+        Mahajan et al. JACC 2015.
+        </a>
+    </div>
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+
+<!--end pointer-->
+</div>
+
+
+<!--bottom bar-->
+<div class="w3-row w3-center san" style="font-size: 1.1vmax;color:#868686">
+    <a href="https://heartrhythmbox.github.io/main/" target="_blank" style="text-decoration:none">
+        <img src="box transparent.png" style="width:1.3vmax">
+        HeartRhythmBox: Main Page
+    </a> <span style="color:black"> &#9679; </span>
+    <a href="#top" style="text-decoration:none;color:black">&uArr; to top</a>
+    <span style="color:black"> &#9679; </span>
+    <a href="https://www.facebook.com/HeartRhythmBox" style="text-decoration:none" target="_blank">
+        <i class="fab fa-facebook-square" style="color:#2E80EC;font-size: 1.2vmax"></i>
+        FB: @HeartRhythmBox
+    </a>
+
+</div-->
+
+
+
+<script src="block navigation.js" ></script>
+<script>
+
+//up arrow
+window.addEventListener("keydown", function(event) {
+    event.preventDefault();
+    if (event.keyCode===38) {
+    blockNav(-1)}
+})
+//down arrow
+window.addEventListener("keydown", function(event) {
+    event.preventDefault();
+    if (event.keyCode===40) {
+    blockNav(1)}
+})
+
+window.addEventListener("keydown", function(event) {
+        event.preventDefault();
+        if (event.keyCode===27) {
+        window.unblur()}
+    })
+
+window.addEventListener("keydown", function(event) {
+        event.preventDefault();
+        if (event.keyCode===80) {
+        pointerSwitch()}
+    })
+
+window.onload = function () {unblur()};
+window.ontouchmove = function () {unblur()};
+
+//pointer
+var pSwitch = 0;
+
+function pointerSwitch(n){
+    
+    if(pSwitch ==0) {
+        pSwitch =1;
+    }
+    else {
+        pSwitch=0;
+        var pointer = document.getElementsByClassName("pointer");
+        pointer[0].style.display = "none";
+    }
+}
+
+
+function pointer() {
+    if (pSwitch!=0){
+    var x = event.clientX;
+    var y = event.clientY;
+    var p = document.getElementsByClassName("pointer");
+    p[0].style.display = "inline";
+    p[0].style.left = x+"px"; 
+    p[0].style.top = y+"px";}
+}
+
+//auto height
+function autoHeight(cName){
+    var c1 = document.getElementsByClassName(cName);
+    setHeight (c1)
+    
+
+    function setHeight(c){
+    //find content height
+    var h = [];var i;
+    for (i=0;i<c.length;i++){
+        var height = c[i].offsetHeight;
+        h.push(height)
+    }
+    h.sort(function(a,b){return b-a})
+    var maxH = h[0]
+   
+    //set height
+    var j;
+    for (j=0;j<c.length;j++){
+        c[j].style.height = maxH+"px"
+    }
+    }
+}
+
+
+
+</script>	
+
+</body>
+</html>
