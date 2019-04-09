@@ -75,12 +75,17 @@
 <!--progression graph-->
 <div class="block blue" style="padding-top:2vmax;padding-bottom: 2vmax">
     <div class="w3-cell-row w3-padding">
-        <div class="w3-cell w3-cell-middle w3-padding san" style="font-size: 3.5vmax;line-height: 120%">
-        AF progresses...<br> even without AF. <br> 
-        <span style="font-weight:600;font-size:4vmax" class="red">
-            The role of<br> 'Second Factor'.</span>
+        <div class="w3-cell w3-cell-middle w3-padding san w3-mobile" style="font-size: 3.5vmax;line-height: 120%">
+            <span class="noMobile">
+            AF progresses...<br> even without AF. <br> 
+            <span style="font-weight:600;font-size:4vmax" class="red">
+            The role of<br> 'Second Factor'.</span></span>
+            <span class="mobileOnly" style="font-size:3.5vmax;">
+                AF progresses even without AF.  <br>
+            <span style="font-weight:600;font-size:4vmax" class="red">
+                The role of 'Second Factor'.</span></span>
         </div>
-        <div class="w3-cell w3-cell-middle w3-center">        
+        <div class="w3-cell w3-cell-middle w3-center w3-mobile">        
         <img src="media/afProgress.jpg" style="width:100%;"></div>
     </div>
     <div class="ref w3-center">
@@ -100,7 +105,7 @@
     </div> 
     <div class="w3-cell-row green w3-padding san" 
     style="font-size: 3.5vmax;line-height: 110%">
-        <div class="w3-cell w3-cell-middle w3-center w3-padding">
+        <div class="w3-cell w3-cell-middle w3-center w3-padding w3-mobile">
             <img src="media/MRI.jpg" style="width:100%">
             Atrial Fibrosis
             <div class="ref">
@@ -108,7 +113,7 @@
                 target="_blank">Heart Rhythm 2010</a>
             </div>
         </div>
-        <div class="w3-cell w3-cell-middle w3-center">        
+        <div class="w3-cell w3-cell-middle w3-center w3-mobile">        
             <img src="media/cartoLoneAF.jpg" style="width:100%;">
             Atrial conduction delay and atrial voltage reduction
             <div class="ref">
@@ -187,7 +192,9 @@ border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
     background-color: #DE394B;color:white;font-size:4vmax;font-weight: 700">
         Risk Factors and Mechanism of AF
     </div>
-    <div class="w3-row w3-padding-small w3-white" style="margin: 0vmax 1vmax">
+
+    <!--nonMobile-->
+    <div class="w3-row w3-padding-small w3-white noMobile" style="margin: 0vmax 1vmax">
         <div class="w3-cell w3-cell-middle w3-center w3-padding-small w3-border-right">
             <img src="media/afMech.png" style="width:100%;">
         </div>
@@ -197,13 +204,31 @@ border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
         </div>
         
     </div>
-    <div class="ref w3-center" style="color:#46484A">
+
+    <!--mobile-->
+    <div class="w3-row w3-padding-small w3-white mobileOnly" style="margin: 0vmax 1vmax">
+        <div class="w3-cell w3-cell-middle w3-center w3-padding-small w3-mobile" style="margin: 0vmax 1vmax">
+            <img src="media/afMech.png" style="width:100%;">
+        </div>
+        <div class="w3-cell w3-cell-middle w3-center w3-padding-small w3-mobile w3-border-top" 
+        style="margin: 0vmax 1vmax">
+            <img src="media/riskFactorRR.png" style="width:100%">
+            
+        </div>
+        
+    </div>
+    <div class="ref w3-center" style="color:#ddd">
         <a href="https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.116.023163"
         target="_blank">
         Lau et al. Circulation 2017.
         </a></div>
     <div class="w3-btn next" onmouseover="blockNav(1)"></div>
 </div>
+
+<a href="https://www.ahajournals.org/doi/full/10.1161/circresaha.117.309732" target="_blank">
+AF & clinical outcome. Circulation Research 2017.</a>
+<a href="https://academic.oup.com/eurheartj/article/37/38/2890/2336162" target="_blank">
+AF risk marker or risk factor for stroke. Eur Heart J 2016.</a>
 
 <!--end pointer-->
 </div>
