@@ -17,6 +17,7 @@
 
 .dark {background-color: #103748}
 .green {color: #B0C900}
+.greenBg {background-color: #B0C900}
 .red {color: #DE394B}
 .blue {background-color: #8EC8F1}
 .grey {background-color: #7E8081}
@@ -38,12 +39,14 @@
     }
 
 .ref {font-size:2vh;color:#ddd;font-family: 'Titillium Web', sans-serif;padding: 1vmax}
+.imgL {width:80%}
 
 .mobileOnly {display: none}
 @media only screen and (max-width: 600px){
     .noMobile {display: none}
     .mobileOnly {display: block}
     .ref {font-size: 1.5vmax}    
+    .imgL {width:100%}
 }
 
 
@@ -90,7 +93,7 @@
         <div class="w3-cell w3-cell-middle w3-center w3-mobile">        
         <img src="media/afProgress.jpg" style="width:100%;"></div>
     </div>
-    <div class="ref w3-center">
+    <div class="ref w3-center" style="color:#555">
         <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4008692/?report=reader#!po=11.0000"
         target="_blank">
         Wise et al. JACC 2014.
@@ -128,7 +131,7 @@
 </div>
 
 <!--sheeps-->
-<div class="block" style="background-color:#b0c900;padding-top:1vmax">
+<div class="block greenBg" style="padding-top:1vmax">
     <div class="w3-row san w3-center" style="font-size: 4vmax;padding: 1vmax;color:white;font-weight: 700;
     line-height: 110%">
         Atria Remodelling as Consequences of Sustained Obesity <span style="font-size: 2.5vmax">(1/2)</span>
@@ -139,7 +142,7 @@
             <td rowspan="2" style="text-align:center">
                 <img src="media/twinSheeps.png" style="width:80%;">
                 <br><span style="font-size: 2.5vmax" class="noMobile">20 sheeps</span>
-                <div class="ref w3-center">
+                <div class="ref w3-center" style="color:#555">
                     <a href="https://www.sciencedirect.com/science/article/pii/S0735109715021944?via%3Dihub" target="_blank">
                     Mahajan et al. JACC 2015.
                     </a>
@@ -165,7 +168,7 @@
 </div>
 
 <!--fat sheep fibrosis-->
-<div class="block" style="background-color:#b0c900;padding-top:1vmax;
+<div class="block greenBg" style="padding-top:1vmax;
 border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
     <div class="w3-row san" style="font-size: 3vmax;padding: 1vmax 1.5vmax;color:white;font-weight: 700;
         line-height: 110%">
@@ -240,7 +243,7 @@ border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
             <div class="w3-col s6 w3-padding w3-mobile">
                 <img src="media/afCVOutcomes.jpg" style="width:100%;padding:1vmax;border-bottom:#DE394B 0.1vmax dotted">
                 Meta-analysis of 9.6 millions participants showed the association of AF and poor outcomes.
-                <div class="ref">
+                <div class="ref" style="color: #aaa">
                     <a href="https://www.bmj.com/content/354/bmj.i4482.full"
                     target="_blank">BMJ 2016.</a>
                 </div>
@@ -248,7 +251,7 @@ border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
             <div class="w3-col s6 w3-center w3-mobile w3-padding">        
                 <img src="media/afRiskAlgo.png" style="width:100%;padding:1vmax;border:#DE394B 0.1vmax dotted">
                 
-                <div class="ref">
+                <div class="ref" style="color:#aaa">
                     <a href="https://www.ahajournals.org/doi/full/10.1161/circresaha.117.309732" target="_blank">
                     Circulation Research 2017.</a>
                 </div>
@@ -273,7 +276,7 @@ border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
         </div>
         <div class="w3-col s6 w3-padding san w3-mobile" style="font-size: 2.5vmax;color:#103748;line-height: 110%">
             <ul class="w3-ul">
-                <li style="border-color:#DE394B;padding: 1vmax">Stroke may occur even without AF being present.
+                <li style="border-color:#fc553d;padding: 1vmax">Stroke may occur even without AF being present.
                 <div style="font-size: 2vmax;color:#57737e;padding:1vmax;line-height: 100%;">
                     In a substudy from ASSERT, 
                     AF was detected before stroke or SE only in 35%. 
@@ -297,7 +300,120 @@ border-top:#7E8081 0.1vmax dotted;padding-bottom: 1vmax">
             </ul>
         </div>
     </div>
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
 
+<!--type of AF and outcome-->
+<div class="block" style="padding-top:1vmax;background-color: #b2b2b2">
+    <div class="w3-row serif" style="font-size: 4vmax;padding: 2vmax;color:white;font-weight: 700;
+        line-height: 110%">
+        Worse outcomes in permanent and persistent than in paroxysmal AF. 
+        <div class="w3-row san w3-padding" style="font-size:2vmax;border-top: #DE394B solid 0.5vmax;
+        color:#f2f2f2;line-height: 90%;margin-top:1vmax;font-weight:400">
+        Data from ENGAGE AF-TIMI 48 trial. 21 105 patients, 2.8 years f/u.
+            <span class="ref">
+                <a href="https://www.ahajournals.org/doi/full/10.1161/CIRCEP.116.004267" target="_blank">
+                    Circulation: Arrhythmia and Electrophysiology. 2017</a>
+            </span>
+        </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-cell w3-cell-middle w3-padding-small w3-mobile">
+            <img src="media/engageStroke.png" style="width:100%">
+        </div>
+        <div class="w3-cell w3-cell-middle w3-padding-small w3-mobile">
+            <img src="media/engageMortality.png" style="width:100%">
+        </div>
+    </div>
+    
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+<!--LIFE and EMPHASIS-HF-->
+<div class="block greenBg" style="padding-top:1vmax;">
+    <div class="w3-row serif" style="font-size: 4vmax;padding: 2vmax;color:white;font-weight: 700;
+        line-height: 110%">
+        Treating HTN and HF to prevent AF.
+    </div>
+    <div class="w3-row w3-padding san" style="font-size:2vmax">
+        <div class="w3-col s6 w3-padding w3-mobile">
+            <img src="media/LIFE.png" style="width: 100%"><br>
+            from LIFE study
+            <span class="ref" style="color: #555">
+                <a href="https://www.sciencedirect.com/science/article/pii/S0735109704024003?via%3Dihub" 
+                target="_blank">(JACC 2005).
+                </a>
+            </span>
+        </div>
+        <div class="w3-col s6 w3-padding w3-mobile">
+            <img src="media/MRA.png" style="width:100%"><br>
+            from EMPHASIS-HF
+            <span class="ref" style="color:#555">
+                <a href="http://www.onlinejacc.org/content/59/18/1598" target="_blank">
+                (JACC 2012).</a>
+                </span>
+        </div>
+
+    </div>
+       
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+<!--exercise and WL-->
+<div class="block greenBg" style="padding-top:1vmax;">
+    <div class="w3-row serif" style="font-size: 4vmax;padding: 2vmax;color:white;font-weight: 700;
+        line-height: 110%">
+        Be Fit to Fight off AF.
+    </div>
+    <div class="w3-row w3-padding san" style="font-size:2vmax">
+        <img src="media/weightExercise.png" style="width:100%">
+
+    </div>
+    <div class="ref" style="color: #555">
+        <a href="http://www.onlinejacc.org/content/65/20/2159" target="_blank">
+        LEGACY. JACC 2015</a>,&nbsp;
+        <a href="https://www.sciencedirect.com/science/article/pii/S0735109714064675" target="_blank">
+        ARREST-AF. JACC 2014</a>, and
+        <a href="https://www.sciencedirect.com/science/article/pii/S0735109715033392" target="_blank">
+        CARDIO-FIT. JACC 2015.
+        </a>
+    </div>  
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+<!--Goal-->
+<div class="block dark" style="padding-top:1vmax;">
+    <div class="w3-row w3-center serif" style="font-size: 4vmax;padding: 2vmax;color:white;font-weight: 700;">
+        <span style="color:#DE394B;border:#DE394B 0.1vmax solid">&nbsp;RISK </span>
+        <span style="background-color:#DE394B;color:#103748;border:#DE394B 0.1vmax solid">
+        &nbsp;FACTORS&nbsp;</span> Management and Goals
+    </div>
+    <div class="w3-row w3-center w3-padding">
+    <img src="media/rfmAndGoal.png" class="imgL"></div>
+    <div class="ref w3-center">
+        <a href="https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.116.023163" target="_blank">
+        Circulation 2017.</a>
+    </div>
+
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
+</div>
+
+<!--integrated AF care-->
+<div class="block dark" style="padding-top:1vmax;">
+    <div class="w3-row w3-center serif" style="font-size: 4vmax;padding: 2vmax;color:white;font-weight: 700;">
+        <span style="color:#B0C900;border:#B0C900 0.1vmax solid" class="san">&nbsp;integrated </span>
+        <span class="san" style="background-color:#B0C900;color:#103748;border:#B0C900 0.1vmax solid">
+        &nbsp;CARE&nbsp;</span>
+        for Atrial Fibrillation
+    </div>
+    <div class="w3-row w3-center w3-padding">
+    <img src="media/targetTx.jpg" class="imgL"></div>
+    <div class="ref w3-center">
+        <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)31072-3/fulltext#fig1" target="_blank">
+        Lancet 2017.</a>
+    </div>
+
+    <div class="w3-btn next" onmouseover="blockNav(1)"></div>
 </div>
 
 
